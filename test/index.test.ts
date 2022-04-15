@@ -1,18 +1,43 @@
 import { describe, expect, it } from 'vitest'
-import { replace } from '../src/utils'
+import { replace, resolvePreset } from '../src/utils'
 
 /** @case-police-ignore */
 
 describe('should', () => {
-  it('works', () => {
-    expect(replace(`
+  it('works', async() => {
+    const replaced = await replace(
+      `
 Github GitHub github GITHUB
-vscode VScode VS Code VSCODE
-`, '')).toMatchInlineSnapshot(`
+vscode VScode VS Code VSCODE vs code VS code
+nextjs Nextjs NextJS Next.js
+`,
+      '',
+    )
+
+    expect(replaced).toMatchInlineSnapshot(`
   "
   GitHub GitHub github GITHUB
-  vscode VS Code VS Code VSCODE
+  vscode VS Code VS Code VSCODE vs code VS Code
+  nextjs Next.js Next.js Next.js
   "
 `)
+  })
+})
+
+describe('presets', () => {
+  it('works', async() => {
+    const applePreset = await resolvePreset('softwares')
+
+    const replaced = await replace(
+      `
+      macOs Macbook
+    `,
+      '',
+      applePreset,
+    )
+
+    expect(replaced).toBe(`
+      macOS Macbook
+    `)
   })
 })

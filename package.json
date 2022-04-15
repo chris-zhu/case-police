@@ -1,9 +1,9 @@
 {
   "name": "case-police",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.5.3",
   "packageManager": "pnpm@6.32.3",
-  "description": "",
+  "description": "Make the case correct, PLEASE!",
   "keywords": [],
   "homepage": "https://github.com/antfu/case-police#readme",
   "bugs": {
@@ -29,7 +29,7 @@
   "files": [
     "dist",
     "bin",
-    "dict.json"
+    "dict"
   ],
   "bin": {
     "case-police": "./bin/case-police.mjs"
@@ -46,26 +46,27 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.19.1",
+    "@antfu/eslint-config": "^0.20.2",
     "@antfu/ni": "^0.14.0",
     "@babel/types": "^7.17.0",
+    "@types/minimist": "^1.2.2",
     "@types/node": "^17.0.23",
     "@types/parse-gitignore": "^1.0.0",
     "bumpp": "^7.1.1",
-    "cac": "^6.7.12",
     "eslint": "^8.12.0",
     "esno": "^0.14.1",
     "fast-glob": "^3.2.11",
     "is-binary-path": "^2.1.0",
     "is-text-path": "^2.0.0",
+    "minimist": "^1.2.6",
     "p-limit": "^4.0.0",
     "parse-gitignore": "^1.0.1",
     "picocolors": "^1.0.0",
-    "pnpm": "^6.32.3",
+    "pnpm": "^6.32.4",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.3",
     "unbuild": "^0.7.2",
-    "vite": "^2.9.0",
-    "vitest": "^0.8.1"
+    "vite": "^2.9.1",
+    "vitest": "^0.9.0"
   }
 }
